@@ -8,3 +8,7 @@ app.listen(3000, () => {
 app.get("/", (req, res, next) => {
  res.json({firstname:"Abdul", lastname:"Salam"});
 });
+
+app.get("/fistname", (req, res, next) => {
+ res.json({firstname:"Abdul"});
+});
