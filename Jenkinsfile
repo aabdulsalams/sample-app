@@ -34,7 +34,7 @@ pipeline {
             }
         }
         
-        stage('Deploying to production') {
+        stage('Deploying to Production') {
             steps{
                 sshagent(credentials: [serverCredential]) {
                     sh '''
@@ -43,7 +43,6 @@ pipeline {
                         docker container stop appnodejs || true && \
                         docker container rm appnodejs || true && \
                         docker run -d --name appnodejs -p 8889:3000 ${registry}"
-                    
                     '''
                 }
             }
